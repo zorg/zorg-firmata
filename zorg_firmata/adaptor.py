@@ -50,8 +50,7 @@ class Firmata(Adaptor):
         """
         self.pwm_write(self, pin_number, value, None)
 
-    def analog_read(self, pin_number)
-        # NOT TESTED YET
+    def analog_read(self, pin_number):
         if not pin_number in self.pins["analog"]:
             pin = self.board.analog[pin_number]
             self.pins["analog"][pin_number] = pin
@@ -70,8 +69,7 @@ class Firmata(Adaptor):
 
         pin.write(value)
 
-    def digital_read(self, pin_number)
-        # NOT TESTED YET
+    def digital_read(self, pin_number):
         if not pin_number in self.pins["digital"]:
             pin = self.board.analog[pin_number]
             self.pins["digital"][pin_number] = pin
