@@ -1,2 +1,2 @@
-zorg==0.0.1
+zorg==0.0.3
 pyfirmata==1.0.2

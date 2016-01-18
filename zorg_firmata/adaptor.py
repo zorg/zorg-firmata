@@ -32,8 +32,8 @@ class Firmata(Adaptor):
 
     def pwm_write(self, pin_number, value, period):
         """
-        The arduino board doesn't actually support analog write.
-        Instead they use pwm write.
+        The arduino board doesn't actually support
+        analog write. Instead it writes a pwm value.
         """
         if not pin_number in self.pins["analog"]:
             pin = self.board.analog[pin_number]
@@ -48,7 +48,7 @@ class Firmata(Adaptor):
         This calls pwm write with no value for the
         period.
         """
-        self.pwm_write(self, pin_number, value, None)
+        self.pwm_write(pin_number, value, None)
 
     def analog_read(self, pin_number):
         if not pin_number in self.pins["analog"]:

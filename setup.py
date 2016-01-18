@@ -19,8 +19,8 @@ requirements = req.readlines()
 setup(
     name="zorg-firmata",
     version="0.0.1",
-    url="https://github.com/zorg-framework/zorg-firmata",
-    description="Python framework for robotics and physical computing.",
+    url="https://github.com/zorg/zorg-firmata",
+    description="Firmata adapter for the Zorg framework.",
     long_description=readme("README.md"),
     author="Zorg Group",
     author_email="gunthercx@gmail.com",
@@ -29,7 +29,7 @@ setup(
     include_package_data=True,
     install_requires=requirements,
     license="MIT",
-    zip_safe=False,
+    zip_safe=True,
     platforms=["any"],
     keywords=["zorg", "firmata"],
     classifiers=[
