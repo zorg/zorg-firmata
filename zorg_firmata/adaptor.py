@@ -10,14 +10,22 @@ class Firmata(Adaptor):
         self.port = options.get("port", None)
         self.i2c_ready = False
 
+        layout = options.get("layout", None)
+        baudrate = options.get("baudrate", 57600)
+        name = options.get("name", None)
+
+        print ">>>", self.port
+
         if not self.port:
-            raise Exception("No port specified for Firmata adaptor. Cannot proceed")
+            raise self.ParameterRequired(
+                "A port must be specified for Firmata adaptor."
+            )
 
         self.board = Board(
             self.port,
-            layout=None,
-            baudrate=57600,
-            name=None
+            layout=layout,
+            baudrate=baudrate,
+            name=name
         )
 
         self.iterator = util.Iterator(self.board)
@@ -79,3 +87,9 @@ class Firmata(Adaptor):
         pin.enable_reporting()
         return pin.read()
 
+    class ParameterRequired(Exception):
+        def __init__(self, message="A required parameter was not provided."):
+            super(Firmata.ParameterRequired, self).__init__(message)
+
+        def __str__(self):
+            return self.message

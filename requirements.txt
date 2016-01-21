@@ -1,2 +1,2 @@
-zorg==0.0.3
-pyfirmata==1.0.2
+zorg<=0.1.0
+pyfirmata<=2.0.0
