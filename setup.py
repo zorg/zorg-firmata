@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-try:
-    from setuptools import setup, find_packages
-except ImportError:
-    from distutils.core import setup, find_packages
+from setuptools import setup, find_packages
 
 try:
     from pypandoc import convert
@@ -15,6 +12,7 @@ except ImportError:
 
 req = open("requirements.txt")
 requirements = req.readlines()
+req.close()
 
 setup(
     name="zorg-firmata",
