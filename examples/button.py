@@ -1,21 +1,21 @@
 import zorg
 import time
 
-def work (my):
+def work(my):
     while True:
 
         # Check the state of the button
         print("Button is pressed?:", my.button.is_pressed())
-        print("Button was bumped?", my.button.is_bumped())
+        #print("Button was bumped?", my.button.is_bumped())
 
         # Wait 1 second before doing it again
-        time.sleep(1)
+        time.sleep(0.5)
 
 robot = zorg.robot({
     "connections": {
         "firmata": {
             "adaptor": "zorg_firmata.Firmata",
-            "port": "/dev/ttyUSB0",
+            "port": "/dev/ttyACM0",
         },
     },
     "devices": {
