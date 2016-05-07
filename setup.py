@@ -16,7 +16,7 @@ req.close()
 
 setup(
     name="zorg-firmata",
-    version="0.0.1",
+    version="0.0.2",
     url="https://github.com/zorg/zorg-firmata",
     description="Firmata adapter for the Zorg framework.",
     long_description=readme("README.md"),
