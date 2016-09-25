@@ -71,7 +71,29 @@ class Firmata(Adaptor):
                 self.board.DIGITAL
             )
 
-        return self.board.digital_read(pin_number)
+        return self.board.analog_write(pin_number)
+
+    def pwm_write(self, pin_number, value):
+        if pin_number not in self.pins['pwm']:
+            self.pins['pwm'].append(pin_number)
+            self.board.set_pin_mode(
+                pin_number,
+                self.board.PWM,
+                self.board.DIGITAL
+            )
+
+        return self.board.analog_write(pin_number, value)
+
+    def pwm_read(self, pin_number):
+        if pin_number not in self.pins['pwm']:
+            self.pins['pwm'].append(pin_number)
+            self.board.set_pin_mode(
+                pin_number,
+                self.board.PWM,
+                self.board.DIGITAL
+            )
+
+        return self.board.analog_read(pin_number)
 
     def servo_write(self, pin_number, value):
         if pin_number not in self.pins['servo']:
