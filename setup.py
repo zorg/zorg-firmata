@@ -25,7 +25,7 @@ setup(
     packages=find_packages(),
     package_dir={"zorg_firmata": "zorg_firmata"},
     install_requires=requirements,
-    license="MIT",
+    license="BSD",
     zip_safe=True,
     platforms=["any"],
     keywords=["zorg", "firmata"],
