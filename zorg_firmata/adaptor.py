@@ -106,7 +106,7 @@ class Firmata(Adaptor):
         # Close the firmata interface down cleanly
         self.board.close()
 
-    def signal_handler(sig, frame):
+    def signal_handler(self, sig, frame):
         print('Ctrl+C pressed')
         if self.board is not None:
             self.board.reset()
